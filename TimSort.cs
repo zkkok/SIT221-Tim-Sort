@@ -64,15 +64,11 @@ namespace Vector
 
         private void MergeSort<K>(K[] array, int index, IComparer<K> comparer, int size) where K : IComparable<K>
         {
-            //Partition the arrays into half with m representing the number of elements in each partition
             int m = size;
 
-            //Partition the arrays base on m
             K[] array1 = array.Skip(index).Take(m).ToArray();
             K[] array2 = array.Skip(m+index).Take(m).ToArray();
 
-
-            //Perform merge operations on the two partitioned arrays
             Merge(array1, array2, array, comparer,index);
         }
 
